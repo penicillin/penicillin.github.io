@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>好医生继教自动登录系统</title>
+</head>
+
+<body>
+<script>
+var name='penicillinm';
+var password='Aa123456';
+var iframe = document.createElement('iframe'); 
+iframe.style.visibility='hidden';
+iframe.src = 'http://www.cmechina.net/indexLoginDo.jsp?login_name=' + name + '&login_pass=' + password;
+if (iframe.attachEvent){ 
+iframe.attachEvent('onload', function(){ 
+parent.a()
+}); 
+} else { 
+iframe.onload = function(){ 
+parent.a()
+}; 
+}
+document.body.appendChild(iframe);
+function a(){
+	location.replace('http://www.cmechina.net');
+	}
+</script>
+</body>
+</html>
