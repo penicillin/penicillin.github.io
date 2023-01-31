@@ -480,6 +480,7 @@
 }
 
 .i-b-rec-text div.i-b-pay span, .i-b-sen-text div.i-b-pay span {
+    background: url(../index_files/i-pay-send.png) no-repeat;
     width: 478px;
     height: 176px;
 }
@@ -514,7 +515,7 @@
 
 .i-b-rec-text .redpacket .main > h3, .i-b-sen-text .redpacket .main > h3, .i-b-rec-text .redpacket .main > h4, .i-b-sen-text .redpacket .main > h4 {
     font-size: 30px;
-    margin: 48px 27px 0;
+    margin: 48px 0px 0px 27px;
     width: 300px;
 }
 
