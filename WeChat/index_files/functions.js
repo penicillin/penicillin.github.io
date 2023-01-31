@@ -39,7 +39,7 @@ function replace_qq_emoji(str) {
     str = str.replace(/\[.*?\]/g, function (word) {
         var w = word.replace('[', '').replace(']', '');
         var index = index_in_array(w, qq_emoji);
-        return '<img class="qq_emoji" src="/weixin/Expression_' + (index + 1) + '@2x.png" />';
+        return '<img class="qq_emoji" src="./weixin/Expression_' + (index + 1) + '@2x.png" />';
     });
     return str;
 }
