@@ -4,7 +4,6 @@
 
 .i-body {
     overflow-y: scroll;
-    bottom: 130px;
 }
 
 .i-body::-webkit-scrollbar {
