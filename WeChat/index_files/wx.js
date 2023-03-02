@@ -38,7 +38,7 @@ $('body').on('click','.a-u-dialog a',function(){
   }
 
   if(!img.length){
-    img = '<img src="images/default-head.png" />';
+    img = '<img src="" />';
   }
 
   content = replace_qq_emoji(content);
@@ -127,15 +127,12 @@ $('body').on('change','.a-u-pic-show-pic input',function() {
     reader.readAsDataURL(imgFile.files[0]);
     reader.onload = function(e){
       var img = '<img src="'+this.result+'" alt=""/>';
-      //console.log($(img));console.log($($(img)[0]));console.log($($(img)[0]).width());alert($(img)[0].width+"==bbb");
       var img1 = document.createElement('img');//创建 img 对象
       $(img1).attr("src", this.result).load(function() {
         $(img1).attr("data-width",this.width).attr("data-height",this.height);
         _this.parent().find('img').remove();
         _this.parent().append(img1);
       });
-      //_this.parent().find('img').remove();
-      //_this.parent().append(img);
 
       if(callback){
         eval(callback + '()');
@@ -165,7 +162,7 @@ $('body').on('click','.a-u-dialog-pic a',function(){
   }
 
   if(!img.length){
-    img = '<img src="/Public/Home/images/face/default-head.png" />';
+    img = '<img src="" />';
   }
 
   var wrap_class = !type ? 'i-b-rec-text' : 'i-b-sen-text';
@@ -204,7 +201,7 @@ $('#add-user').click(function(){
 function setUserInfo(el){
 var pic_url_el=el.parentElement.firstElementChild.firstElementChild.firstElementChild.nextElementSibling;
 var userName_el=el.nextElementSibling.firstElementChild.firstElementChild.nextElementSibling;
-if(el.selectedIndex>0){
+if(!(el.options[el.selectedIndex].text.startsWith('-'))){
 pic_url_el.src='./Users/'+el.options[el.selectedIndex].text+'.jpg';
 userName_el.value=el.options[el.selectedIndex].text;
 }else{
@@ -220,15 +217,6 @@ $('body').on('click','.a-u-dialog-del',function(){
   }
   return false;
 });
-
-/*$('body').on('mouseover','.i-b-time,.i-b-rec-text,.i-b-sen-text',function(){
- $(this).find('.msg-del').show();
- });
- $('body').on('mouseout','.i-b-time,.i-b-rec-text,.i-b-sen-text',function(){
- $(this).find('.msg-del').hide();
- });*/
-
-
 
 $('body').on('click','.msg-del',function(){
   $(this).parents('.i-b-time,.i-b-rec-text,.i-b-sen-text').remove();
@@ -259,7 +247,7 @@ $('body').on('click','.a-u-dialog-sedpacket a',function(){
   }
 
   if(!img.length){
-    img = '<img src="/Public/Home/images/face/default-head.png" />';
+    img = '<img src="" />';
   }
 
   var wrap_class = !type ? 'i-b-rec-text' : 'i-b-sen-text';
@@ -296,7 +284,6 @@ $('body').on('click','.a-u-dialog-redpacket a',function(){
   var word = !type ? name+'领取了你的' : '你领取了'+name+'的';
   var nick = type ? '' : '<p class="i-b-nick">' + name + '</p>';
 
-  //var html = $('<div class="' + wrap_class + '"><div class="redpacket">' + nick + '<div class="content"><i class="arraw"><b></b></i><div class="main clear-div"><i class="icon"></i><h3>' + redpacket + '</h3><h4>领取红包</h4></div><div class="clear-div foot"><h3>微信红包</h3></div><a class="msg-del"></a></div></div></div>');
   var html = $('<div class="i-b-time"><span><img src="index_files/a-redpacket-icon.png" class="icon_redpacket"> '+word+'<a class="orange">红包</a></span><a class="msg-del"></a></div>');
   $('.i-body').append(html);
 
@@ -329,7 +316,7 @@ $('body').on('click','.a-u-dialog-pay a',function(){
   }
 
   if(!img.length){
-    img = '<img src="images/default-head.png" />';
+    img = '<img src="" />';
   }
 
   var wrap_class = !type ? 'i-b-rec-text' : 'i-b-sen-text';

@@ -1,4 +1,4 @@
-
+var qq_emoji = ["微笑", "撇嘴", "色", "发呆", "得意", "流泪", "害羞", "闭嘴", "睡", "大哭", "尴尬", "发怒", "调皮", "呲牙", "惊讶", "难过", "酷", "冷汗", "抓狂", "吐", "偷笑", "愉快", "白眼", "傲慢", "饥饿", "困", "惊恐", "流汗", "憨笑", "悠闲", "奋斗", "咒骂", "疑问", "嘘", "晕", "疯了", "衰", "骷髅", "敲打", "再见", "擦汗", "抠鼻", "鼓掌", "糗大了", "坏笑", "左哼哼", "右哼哼", "哈欠", "鄙视", "委屈", "快哭了", "阴险", "亲亲", "吓", "可怜", "菜刀", "西瓜", "啤酒", "篮球", "乒乓", "咖啡", "饭", "猪头", "玫瑰", "凋谢", "嘴唇", "爱心", "心碎", "蛋糕", "闪电", "炸弹", "刀", "足球", "瓢虫", "便便", "月亮", "太阳", "礼物", "拥抱", "强", "弱", "握手", "胜利", "抱拳", "勾引", "拳头", "差劲", "爱你", "NO", "OK", "爱情", "飞吻", "跳跳", "发抖", "怄火", "转圈", "磕头", "回头", "跳绳", "挥手", "激动", "街舞", "献吻", "左太极", "右太极"];
 var browser = {
     versions:function(){
         var u = navigator.userAgent, app = navigator.appVersion;
@@ -86,8 +86,6 @@ function show_app(i){
 }
 
 $(function(){
-
-
     //初始化手机时间
     var now = new Date();
     var hours = now.getHours();
@@ -208,27 +206,6 @@ $(function(){
         var num = get_random_num(4,8);
         var name = randomString(num,true);
         $(this).parents('.add-user').find('.a-u-data-name').val(name);
-
-        //明星朋友圈所用代码
-        $('.i-body-star-name1').html(name);
-        $('.i-body-star-name2').html(name+':&nbsp;&nbsp;<span>怪我咯~</span>');
-        $('.i-body-star-name3').html(name+':&nbsp;&nbsp;<span>知道就好！</span>');
-        $('.i-body-star-name4').html('<span>'+name+'，&nbsp;&nbsp;决战夜你要加油！我们哎哟不错战队是<br />最屌的！</span>');
-        $('.i-body-star-name5').html(name+':&nbsp;&nbsp;<span>杰伦，决战夜小公举会来吗。~</span>');
-        $('.i-body-star-name6').html('周杰伦<span>回复</span>'+name+':&nbsp;&nbsp;<span>你拿冠军了，我让你当小<br />公举的小王纸。</span>');
-        $('.i-body-star-name7').html(name+':');
-        $('.i-body-star-name8').html(name+':&nbsp;&nbsp;<span>超哥，当初为什么要选我。</span>');
-        $('.i-body-star-name9').html('邓超<span>回复</span>'+name+':&nbsp;&nbsp;<span>你是我认识的人中，最<br />快的！</span>');
-        $('.i-body-star-name10').html(name+'，李晨，刘德华，郭富城，黎明...');
-        $('.i-body-star-name11').html(name+':&nbsp;&nbsp;<span>最近忙，就酱。</span>');
-        $('.i-body-star-name12').html(name+'，韩寒，郭敬明，叫兽易小星...');
-        $('.i-body-star-name13').html(name+':&nbsp;&nbsp;<span>哥，我有草原，可以放野（悍）马。</span>');
-        $('.i-body-star-name14').html('刘强东<span>回复</span>'+name+':&nbsp;&nbsp;<span>就你了，今晚交车。</span>');
-        $('.i-body-star-name15').html(name+':&nbsp;&nbsp;<span>金姐，求虐！</span>');
-        $('.i-body-star-name16').html('金星<span>回复</span>'+name+':&nbsp;&nbsp;<span>你呢，人长的挺好看，就是<br />偏偏要靠才华。</span>');
-        //明星朋友圈所用代码end
-
-
     });
 
     //电池滑块
