@@ -49,25 +49,25 @@ function set_water() {
     if (!water.length) {
         $('#iphone').append('<div class="i-water" id="waters"></div>');
     }
-    $('.phone-wrap').css('transform', 'scale(0.5)');//Í¬Ê±ÉèÖÃ±ÈÀı
-    $('.iphone').css('height', '1136px');//ÉèÖÃDIV¸ß¶È
+    $('.phone-wrap').css('transform', 'scale(0.5)');//åŒæ—¶è®¾ç½®æ¯”ä¾‹
+    $('.iphone').css('height', '1136px');//è®¾ç½®DIVé«˜åº¦
 }
 
-// ¶ÔDateµÄÀ©Õ¹£¬½« Date ×ª»¯ÎªÖ¸¶¨¸ñÊ½µÄString
-// ÔÂ(M)¡¢ÈÕ(d)¡¢Ğ¡Ê±(h)¡¢·Ö(m)¡¢Ãë(s)¡¢¼¾¶È(q) ¿ÉÒÔÓÃ 1-2 ¸öÕ¼Î»·û£¬
-// Äê(y)¿ÉÒÔÓÃ 1-4 ¸öÕ¼Î»·û£¬ºÁÃë(S)Ö»ÄÜÓÃ 1 ¸öÕ¼Î»·û(ÊÇ 1-3 Î»µÄÊı×Ö)
-// Àı×Ó£º
+// å¯¹Dateçš„æ‰©å±•ï¼Œå°† Date è½¬åŒ–ä¸ºæŒ‡å®šæ ¼å¼çš„String
+// æœˆ(M)ã€æ—¥(d)ã€å°æ—¶(h)ã€åˆ†(m)ã€ç§’(s)ã€å­£åº¦(q) å¯ä»¥ç”¨ 1-2 ä¸ªå ä½ç¬¦ï¼Œ
+// å¹´(y)å¯ä»¥ç”¨ 1-4 ä¸ªå ä½ç¬¦ï¼Œæ¯«ç§’(S)åªèƒ½ç”¨ 1 ä¸ªå ä½ç¬¦(æ˜¯ 1-3 ä½çš„æ•°å­—)
+// ä¾‹å­ï¼š
 // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
 // (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
 Date.prototype.format = function (fmt) { //author: meizz
     var o = {
-        "M+": this.getMonth() + 1,                 //ÔÂ·İ
-        "d+": this.getDate(),                    //ÈÕ
-        "h+": this.getHours(),                   //Ğ¡Ê±
-        "m+": this.getMinutes(),                 //·Ö
-        "s+": this.getSeconds(),                 //Ãë
-        "q+": Math.floor((this.getMonth() + 3) / 3), //¼¾¶È
-        "S": this.getMilliseconds()             //ºÁÃë
+        "M+": this.getMonth() + 1,                 //æœˆä»½
+        "d+": this.getDate(),                    //æ—¥
+        "h+": this.getHours(),                   //å°æ—¶
+        "m+": this.getMinutes(),                 //åˆ†
+        "s+": this.getSeconds(),                 //ç§’
+        "q+": Math.floor((this.getMonth() + 3) / 3), //å­£åº¦
+        "S": this.getMilliseconds()             //æ¯«ç§’
     };
     if (/(y+)/.test(fmt))
         fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
@@ -108,13 +108,13 @@ $('.' + _class).addClass(val);
 
 if(val=='i-n-user-group')
 {
-$(".input-common").val("ÈºÁÄ±êÌâ(3)");
-$('.i-n-name span').text("ÈºÁÄ±êÌâ(3)");
+$(".input-common").val("ç¾¤èŠæ ‡é¢˜(3)");
+$('.i-n-name span').text("ç¾¤èŠæ ‡é¢˜(3)");
 }
 else if(val=='i-n-user-singal')
 {
-$(".input-common").val("µ¥ÁÄ±êÌâ");
-$('.i-n-name span').text("µ¥ÁÄ±êÌâ");
+$(".input-common").val("å•èŠæ ‡é¢˜");
+$('.i-n-name span').text("å•èŠæ ‡é¢˜");
 }
 
 });

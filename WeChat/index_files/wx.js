@@ -1,6 +1,5 @@
 //消息数目
 var i_n_count = randomString(1);
-
 if(i_n_count > 0){
   $('.input-i-n-count').val(i_n_count);
   $('.i-n-count').text(i_n_count);
@@ -405,7 +404,6 @@ $('.body_bg_del').click(function(){
   return false;
 });
 
-$('#add-user').click();
 
 setTimeout(function(){
   $('.btn-rand-face').click();
