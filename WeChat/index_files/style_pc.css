@@ -1,0 +1,381 @@
+body {
+    font-family: "微软雅黑";
+    background: #ececec;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+}
+.navbar {
+    width: 100%;
+    padding: 16px 5%;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar2 {
+    width: 100%;
+    padding: 16px 5%;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 170px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 6%;
+    background: url(//static.jietushuiyin.com/index/images/webtool/banner.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.banner_wrap {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.banner_le .banner_text {
+    width: 500px;
+}
+
+.banner_le .banner_text2 {
+    width: 300px;
+    margin-top: 50px;
+}
+
+.banner_ri {
+    width: 200px;
+    text-align: right;
+}
+.banner_ri .banner_but2{
+    margin-top: 20px;
+}
+.banner_ri a {
+    width: 200px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.banner_ri a .banner_img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.banner_p {
+    width: 200px;
+    font-size: 12px;
+    color: #fff;
+    margin: 5px 0 0 0;
+    padding-right: 6px;
+}
+
+.banner_ri a.ios {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.banner_ri a.Android {
+    color: #6b5df5;
+}
+
+.download_button a.Android:hover {
+    color: #6b5df5;
+}
+
+.download_button a.Ios:hover {
+    color: #fff;
+}
+
+.main {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.main::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: #6b5df5;
+    height: 100%;
+    top: 116px;
+    left: 55%;
+    opacity: .4;
+}
+
+.nav_title {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+.nav_title img {
+    width: 160px;
+}
+
+.main_le {
+    width: 50%;
+}
+
+.main_ri {
+    width: 40%;
+}
+
+.le_list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.le_list li {
+    display: inline-block;
+    width: 28%;
+    background-color: #5ac53a;
+    overflow: hidden;
+    border: 1px solid #5ac53a;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-right: calc(8% - 6px);
+}
+.le_list li.list_color{
+    background-color: #feb246;
+    border: 1px solid #feb246;
+}
+.le_list li.list_color2{
+    background-color: #9298f0;
+    border: 1px solid #9298f0;
+}
+.le_list li.list_color3{
+    background-color: #099dff;
+    border: 1px solid #099dff;
+}
+.le_list li.list_color4{
+    background-color: #01a8ee;
+    border: 1px solid #01a8ee;
+}
+.le_list li.list_color5{
+    background-color: #e7563b;
+    border: 1px solid #e7563b;
+}
+.le_list li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.le_list_img {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.le_list_img img {
+    width: 30%;
+}
+
+.le_list_text {
+    width: 100%;
+    background-color: #fff;
+    color: #1a1a1a;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.ri_list {
+    width: 100%;
+    padding-top: 24px;
+}
+
+.ri_list li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.help_le {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.help_le a {
+    color: #434343;
+    text-decoration: none;
+}
+.help_le a:active{
+    color: #6b5df5;
+}
+.help_le a:hover {
+    color: #6b5df5;
+    transition: all .5s ease-in;
+}
+.help_ri {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.help_ri a {
+    color: #6b5df5;
+    text-decoration: none;
+}
+.help_ri a:active{
+    color: #6b5df5;
+}
+.help_ri img {
+    width: 7px;
+    margin-left: 6px;
+}
+/* 分割线 */
+.words {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: simsun;
+}
+
+.breadcrumbs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 15px;
+    font-family: simsun;
+    border-radius: 6px;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.breadcrumbs a {
+    color: #9f96f1;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: #9f96f1;
+}
+
+.breadcrumbs a.curre {
+    color: #666;
+    text-decoration: none;
+}
+
+.breadcrumbs a.curre:hover {
+    color: #9f96f1;
+}
+
+.breadcrumbs span {
+    margin: 0 10px;
+    color: #9f96f1;
+}
+
+.words h1 {
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    font-weight: 300;
+    color: #333;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.words img {
+    max-width: 80%;
+}
+
+.words_content {
+    color: #444;
+}
+
+.fixed-bottom {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.footer {
+    color: #666;
+    width: 100%;
+    max-width: 1300px;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 1.85;
+    margin: 60px auto;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.footer p {
+    color: #666;
+    font-size: 14px;
+}
+.footer_link{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 6px;
+}
+.footer_link b {
+    margin: 0 3px;
+    font-weight: 400;
+    color: #ddd;
+}
+.footer_link a {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 4px;
+    white-space: nowrap;
+    color: #6c6c6c;
+    text-decoration: none;
+}
+.footer_link a:hover{
+    color: #6b5df5;
+}
+
+.nav_text{
+    font-size: 16px;
+    color: #1a1a1a;
+}
