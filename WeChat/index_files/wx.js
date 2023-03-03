@@ -1,25 +1,25 @@
 //消息数目
 var i_n_count = randomString(1);
-if(i_n_count > 0){
+if (i_n_count > 0) {
   $('.input-i-n-count').val(i_n_count);
   $('.i-n-count').text(i_n_count);
 }
-$('.input-i-n-count').bind('input propertychange', function() {
+$('.input-i-n-count').bind('input propertychange', function () {
   var val = $(this).val();
-  if(isNaN(val) || val == 0){
+  if (isNaN(val) || val == 0) {
     $('.i-n-count').text('');
     return false;
   }
   val = $(this).val();
   $('.i-n-count').text(val);
 });
-$('.btn-del-i-n-count').click(function(){
+$('.btn-del-i-n-count').click(function () {
   $('.i-n-count').text('');
   $('.input-i-n-count').val('');
   return false;
 });
 
-$('body').on('click','.a-u-dialog a',function(){
+$('body').on('click', '.a-u-dialog a', function () {
   var user = $(this).parents('.add-user');
   var index = user.index();
   var name = user.find('.a-u-name .a-u-data-name').val();
@@ -27,17 +27,17 @@ $('body').on('click','.a-u-dialog a',function(){
   var img = $(this).parent().parent().find('.a-u-pic-show img').clone();
   var type = user.find('.a-u-dialog-master a').hasClass('btn-success');
 
-  if(name == ''){
+  if (name == '') {
     alert('请输入用户名！');
     return false;
   }
 
-  if(content == ''){
+  if (content == '') {
     alert('请输入聊天内容！');
     return false;
   }
 
-  if(!img.length){
+  if (!img.length) {
     img = '<img src="" />';
   }
 
@@ -54,7 +54,7 @@ $('body').on('click','.a-u-dialog a',function(){
   return false;
 });
 
-$('.add-time-btn').click(function(){
+$('.add-time-btn').click(function () {
   var year = $('.slt-year option:selected').val();
   var month = $('.slt-month option:selected').val();
   var day = $('.slt-day option:selected').val();
@@ -63,15 +63,15 @@ $('.add-time-btn').click(function(){
   var hour = $('.slt-hour option:selected').val();
   var minite = $('.slt-minite option:selected').val();
   var str = '';
-  if(year != '-')
+  if (year != '-')
     str += year + '年';
-  if(month != '-')
+  if (month != '-')
     str += month + '月';
-  if(day != '-')
+  if (day != '-')
     str += day + '日 ';
-  if(xinqi != '-')
+  if (xinqi != '-')
     str += xinqi + ' ';
-  if(shi != '-')
+  if (shi != '-')
     str += shi;
   str += hour + ':';
   str += minite;
@@ -80,15 +80,15 @@ $('.add-time-btn').click(function(){
   return false;
 });
 
-var set_body_bg = function(){
+var set_body_bg = function () {
   var img = $('.a-u-pic-bodybg img');
   var src = img.attr('src');
-  $('.i-body').css('background-image','url(' + src + ')');
+  $('.i-body').css('background-image', 'url(' + src + ')');
 
 }
 
 
-$('body').on('change','.a-u-pic-show input',function() {
+$('body').on('change', '.a-u-pic-show input', function () {
   var img = document.createElement('img');//创建 img 对象
   var _this = $(this);
   var callback = _this.attr('data-callback');
@@ -97,15 +97,15 @@ $('body').on('change','.a-u-pic-show input',function() {
 
   var imgFile = $(this).get(0);
 
-  if(window.URL && imgFile.files[0]){
+  if (window.URL && imgFile.files[0]) {
     var reader = new FileReader();
     reader.readAsDataURL(imgFile.files[0]);
-    reader.onload = function(e){
-      var img = '<img src="'+this.result+'" alt=""/>';
+    reader.onload = function (e) {
+      var img = '<img src="' + this.result + '" alt=""/>';
       _this.parent().find('img').remove();
       _this.parent().append(img);
 
-      if(callback){
+      if (callback) {
         eval(callback + '()');
       }
     }
@@ -113,7 +113,7 @@ $('body').on('change','.a-u-pic-show input',function() {
 });
 
 //图片对话上传图片
-$('body').on('change','.a-u-pic-show-pic input',function() {
+$('body').on('change', '.a-u-pic-show-pic input', function () {
   var img = document.createElement('img');//创建 img 对象
   var _this = $(this);
   var callback = _this.attr('data-callback');
@@ -122,19 +122,19 @@ $('body').on('change','.a-u-pic-show-pic input',function() {
 
   var imgFile = $(this).get(0);
 
-  if(window.URL && imgFile.files[0]){
+  if (window.URL && imgFile.files[0]) {
     var reader = new FileReader();
     reader.readAsDataURL(imgFile.files[0]);
-    reader.onload = function(e){
-      var img = '<img src="'+this.result+'" alt=""/>';
+    reader.onload = function (e) {
+      var img = '<img src="' + this.result + '" alt=""/>';
       var img1 = document.createElement('img');//创建 img 对象
-      $(img1).attr("src", this.result).load(function() {
-        $(img1).attr("data-width",this.width).attr("data-height",this.height);
+      $(img1).attr("src", this.result).load(function () {
+        $(img1).attr("data-width", this.width).attr("data-height", this.height);
         _this.parent().find('img').remove();
         _this.parent().append(img1);
       });
 
-      if(callback){
+      if (callback) {
         eval(callback + '()');
       }
     }
@@ -143,25 +143,25 @@ $('body').on('change','.a-u-pic-show-pic input',function() {
 
 //添加图片对话
 var pic_i = 0;
-$('body').on('click','.a-u-dialog-pic a',function(){
-  $('.i-body').css('background','none');
+$('body').on('click', '.a-u-dialog-pic a', function () {
+  $('.i-body').css('background', 'none');
   var user = $(this).parents('.add-user');
   var name = user.find('.a-u-name .a-u-data-name').val();
   var img = $(this).parent().parent().find('.a-u-pic-show img').clone();
   var pic = $(this).parent().parent().find('.a-u-pic-show-pic img').clone();
   var type = user.find('.a-u-dialog-master a').hasClass('btn-success');
   pic_i = pic_i + 1;
-  if(name == ''){
+  if (name == '') {
     alert('请输入用户名！');
     return false;
   }
 
-  if(!pic.length){
+  if (!pic.length) {
     alert('您没有上传图片！');
     return false;
   }
 
-  if(!img.length){
+  if (!img.length) {
     img = '<img src="" />';
   }
 
@@ -171,65 +171,71 @@ $('body').on('click','.a-u-dialog-pic a',function(){
 
   var unread = '';//type ? '' : '<strong></strong>';
 
-  var span_height=pic.attr('data-height')/(pic.attr('data-width')/209);
+  var span_height = pic.attr('data-height') / (pic.attr('data-width') / 209);
 
-  var html = $('<div class="' + wrap_class + '"><div class="i-b-voice">' + nick + '<span class="wx_pic_diy" id="s'+pic_i+'" style="height:'+span_height+'px"><h6 class="' + pic_type + '"></h6><a class="msg-del"></a></span></div></div>');
+  var html = $('<div class="' + wrap_class + '"><div class="i-b-voice">' + nick + '<span class="wx_pic_diy" id="s' + pic_i + '" style="height:' + span_height + 'px"><h6 class="' + pic_type + '"></h6><a class="msg-del"></a></span></div></div>');
 
   html.prepend(img);
 
   $('.i-body').append(html);
 
-  $('#s'+pic_i).prepend(pic);
+  $('#s' + pic_i).prepend(pic);
 
 
   return false;
 });
 
 //读取全部用户数据列表
-var optionList="";
-user_name_array.forEach(value=>{optionList+='<option>'+value+'</option>'})
+var optionList = "";
+try {
+  user_name_array.forEach(value => { optionList += '<option>' + value + '</option>' });
+} catch (e) {
+  console.debug(`无用户列表`);
+}
 
 //添加用户
-$('#add-user').click(function(){
+$('#add-user').click(function () {
   var time = (new Date()).valueOf();
-  var html = $('<div class="add-user"><div class="a-u-pic"><div class="a-u-pic-show"><input type="file" accept="image/jpeg,image/x-png" /><img src="index_files/add-pic.png"></div></div><select id="select" class="slt-common" onchange="setUserInfo(this)"><option>-----请选择-----</option>'+optionList+'</select><div class="a-u-name"><p><span>用户名：</span><input class="a-u-data-name" type="text" value="" /></p><p><span>聊天内容：</span><textarea class="a-u-content' + time + '">收到</textarea><a class="a-u-face btn-add-face" data-input="a-u-content' + time + '" href="#">表情</a></p><p><span>红包祝福语：</span><input class="a-u-data-redpacket" type="text" value="恭喜发财，大吉大利！"></p><p><span>转账/收钱金额：</span><input class="a-u-data-pay" type="text" value="" /></p><p><span>语音时间：</span><input class="a-u-data-voice" type="text" value="" /></p><p><input style="margin-right:5px;" class="btn-rand-username" type="button" value="随机用户名" /></p><div class="a-u-pic-pic"><div class="a-u-pic-show-pic"><input type="file" class="a-u-data-pic" accept="image/jpeg,image/x-png"></div></div></div><div class="a-u-dialog" style="clear:both;"><a class="btn btn-primary" data-type="left" href="#">添加文字对话</a></div><div class="a-u-dialog-pic"><a class="btn btn-warning" data-type="left" href="#">添加图片对话</a></div><div class="a-u-dialog-voice"><a class="btn btn-primary" data-type="left" href="#">添加语音对话</a></div><div class="a-u-dialog-sedpacket"><a class="btn btn-danger" data-type="left" href="#">添加发红包对话</a></div><div class="a-u-dialog-redpacket"><a class="btn btn-danger" data-type="left" href="#">添加收红包对话</a></div><div class="a-u-dialog-pay"><a class="btn btn-primary" data-dir="send" data-type="left" href="#">添加转账对话</a></div><div class="a-u-dialog-pay"><a class="btn btn-primary" data-dir="rec" data-type="left" href="#">添加收钱对话</a></div><div class="a-u-dialog-del"><a class="btn btn-danger" href="#">删除用户</a></div></div>');
+  var html = '<div class="add-user"><div class="a-u-pic"><div class="a-u-pic-show"><input type="file" accept="image/jpeg,image/x-png" /><img src="index_files/add-pic.png"></div></div>';
+  optionList != '' ? html+='<select id="select" class="slt-common" onchange="setUserInfo(this)"><option>-----请选择-----</option>' + optionList + '</select>':null;
+  html= $(html+'<div class="a-u-name"><p><span>用户名：</span><input class="a-u-data-name" type="text" value="" /></p><p><span>聊天内容：</span><textarea class="a-u-content' + time + '">收到</textarea><a class="a-u-face btn-add-face" data-input="a-u-content' + time + '" href="#">表情</a></p><p><span>红包祝福语：</span><input class="a-u-data-redpacket" type="text" value="恭喜发财，大吉大利！"></p><p><span>转账/收钱金额：</span><input class="a-u-data-pay" type="text" value="" /></p><p><span>语音时间：</span><input class="a-u-data-voice" type="text" value="" /></p><div class="a-u-pic-pic"><div class="a-u-pic-show-pic"><input type="file" class="a-u-data-pic" accept="image/jpeg,image/x-png"></div></div></div><div class="a-u-dialog" style="clear:both;"><a class="btn btn-primary" data-type="left" href="#">添加文字对话</a></div><div class="a-u-dialog-pic"><a class="btn btn-warning" data-type="left" href="#">添加图片对话</a></div><div class="a-u-dialog-voice"><a class="btn btn-primary" data-type="left" href="#">添加语音对话</a></div><div class="a-u-dialog-sedpacket"><a class="btn btn-danger" data-type="left" href="#">添加发红包对话</a></div><div class="a-u-dialog-redpacket"><a class="btn btn-danger" data-type="left" href="#">添加收红包对话</a></div><div class="a-u-dialog-pay"><a class="btn btn-primary" data-dir="send" data-type="left" href="#">添加转账对话</a></div><div class="a-u-dialog-pay"><a class="btn btn-primary" data-dir="rec" data-type="left" href="#">添加收钱对话</a></div><div class="a-u-dialog-del"><a class="btn btn-danger" href="#">删除用户</a></div></div>');
   $('.users').append(html);
-  html.find('.btn-rand-username').click();
 });
+$('#add-user').click();//在主页中添加一个用户
 
 //根据选择设置头像及用户名
-function setUserInfo(el){
-var pic_url_el=el.parentElement.firstElementChild.firstElementChild.firstElementChild.nextElementSibling;
-var userName_el=el.nextElementSibling.firstElementChild.firstElementChild.nextElementSibling;
-if(!(el.options[el.selectedIndex].text.startsWith('-'))){
-pic_url_el.src='./Users/'+el.options[el.selectedIndex].text+'.jpg';
-userName_el.value=el.options[el.selectedIndex].text;
-}else{
-pic_url_el.src="index_files/add-pic.png";
-userName_el.value="";
-}
+function setUserInfo(el) {
+  var pic_url_el = el.parentElement.firstElementChild.firstElementChild.firstElementChild.nextElementSibling;
+  var userName_el = el.nextElementSibling.firstElementChild.firstElementChild.nextElementSibling;
+  if (!(el.options[el.selectedIndex].text.startsWith('-'))) {
+    pic_url_el.src = './Users/' + el.options[el.selectedIndex].text + '.jpg';
+    userName_el.value = el.options[el.selectedIndex].text;
+  } else {
+    pic_url_el.src = "index_files/add-pic.png";
+    userName_el.value = "";
+  }
 }
 
 //删除用户
-$('body').on('click','.a-u-dialog-del',function(){
-  if(confirm('您确认要删除？')){
+$('body').on('click', '.a-u-dialog-del', function () {
+  if (confirm('您确认要删除？')) {
     $(this).parents('.add-user').remove();
   }
   return false;
 });
 
-$('body').on('click','.msg-del',function(){
+$('body').on('click', '.msg-del', function () {
   $(this).parents('.i-b-time,.i-b-rec-text,.i-b-sen-text').remove();
 });
 
-$('.clear-dialog').click(function(){
-  if(confirm('您确认要清除所有对话？')){
+$('.clear-dialog').click(function () {
+  if (confirm('您确认要清除所有对话？')) {
     $('.i-b-time,.i-b-rec-text,.i-b-sen-text').remove();
   }
 });
 
 //添加发红包对话
-$('body').on('click','.a-u-dialog-sedpacket a',function(){
+$('body').on('click', '.a-u-dialog-sedpacket a', function () {
   var user = $(this).parents('.add-user');
   var type = user.find('.a-u-dialog-master a').hasClass('btn-success');
   var index = user.index();
@@ -237,16 +243,16 @@ $('body').on('click','.a-u-dialog-sedpacket a',function(){
   var redpacket = user.find('.a-u-name .a-u-data-redpacket').val();
   var img = $(this).parent().parent().find('.a-u-pic-show img').clone();
 
-  if(name == ''){
+  if (name == '') {
     alert('请输入用户名！');
     return false;
   }
 
-  if(redpacket == ''){
-    redpacket='恭喜发财，大吉大利！';
+  if (redpacket == '') {
+    redpacket = '恭喜发财，大吉大利！';
   }
 
-  if(!img.length){
+  if (!img.length) {
     img = '<img src="" />';
   }
 
@@ -261,37 +267,37 @@ $('body').on('click','.a-u-dialog-sedpacket a',function(){
 });
 
 //添加收红包对话
-$('body').on('click','.a-u-dialog-redpacket a',function(){
+$('body').on('click', '.a-u-dialog-redpacket a', function () {
   var user = $(this).parents('.add-user');
   var type = user.find('.a-u-dialog-master a').hasClass('btn-success');
-  var name=user.find('.a-u-name .a-u-data-name').val();
-  var user_num=$(this).parents().parents().find('.add-user').length;
-  if(type){
-    $(this).parents().parents().find('.add-user').each(function(index,element){
-      if($(this).find('.a-u-dialog-master a').hasClass('btn-success')){
-        indexs=index;
+  var name = user.find('.a-u-name .a-u-data-name').val();
+  var user_num = $(this).parents().parents().find('.add-user').length;
+  if (type) {
+    $(this).parents().parents().find('.add-user').each(function (index, element) {
+      if ($(this).find('.a-u-dialog-master a').hasClass('btn-success')) {
+        indexs = index;
         return false;
       }
     });
-    var rand=get_random_num(0,user_num-1);
-    if(rand==indexs){
-      rand=(rand<(user_num-1)) ? rand+1 : rand-1;
+    var rand = get_random_num(0, user_num - 1);
+    if (rand == indexs) {
+      rand = (rand < (user_num - 1)) ? rand + 1 : rand - 1;
     }
-    name=$($(this).parents().parents().find('.add-user')[rand]).find('.a-u-name .a-u-data-name').val();
+    name = $($(this).parents().parents().find('.add-user')[rand]).find('.a-u-name .a-u-data-name').val();
   }
 
 
-  var word = !type ? name+'领取了你的' : '你领取了'+name+'的';
+  var word = !type ? name + '领取了你的' : '你领取了' + name + '的';
   var nick = type ? '' : '<p class="i-b-nick">' + name + '</p>';
 
-  var html = $('<div class="i-b-time"><span><img src="index_files/a-redpacket-icon.png" class="icon_redpacket"> '+word+'<a class="orange">红包</a></span><a class="msg-del"></a></div>');
+  var html = $('<div class="i-b-time"><span><img src="index_files/a-redpacket-icon.png" class="icon_redpacket"> ' + word + '<a class="orange">红包</a></span><a class="msg-del"></a></div>');
   $('.i-body').append(html);
 
   return false;
 });
 
 //添加转账对话
-$('body').on('click','.a-u-dialog-pay a',function(){
+$('body').on('click', '.a-u-dialog-pay a', function () {
   var dir = $(this).attr('data-dir');
   var user = $(this).parents('.add-user');
   var type = user.find('.a-u-dialog-master a').hasClass('btn-success');
@@ -300,22 +306,22 @@ $('body').on('click','.a-u-dialog-pay a',function(){
   var pay = user.find('.a-u-name .a-u-data-pay').val();
   var img = $(this).parent().parent().find('.a-u-pic-show img').clone();
 
-  if(name == ''){
+  if (name == '') {
     alert('请输入用户名！');
     return false;
   }
 
-  if(pay == ''){
+  if (pay == '') {
     alert('请输入转账/收钱金额！');
     return false;
   }
 
-  if(isNaN(pay)){
+  if (isNaN(pay)) {
     alert('您输入的金额有误！');
     return false;
   }
 
-  if(!img.length){
+  if (!img.length) {
     img = '<img src="" />';
   }
 
@@ -332,29 +338,29 @@ $('body').on('click','.a-u-dialog-pay a',function(){
 });
 
 //添加语音对话
-$('body').on('click','.a-u-dialog-voice a',function(){
+$('body').on('click', '.a-u-dialog-voice a', function () {
   var user = $(this).parents('.add-user');
   var name = user.find('.a-u-name .a-u-data-name').val();
   var img = $(this).parent().parent().find('.a-u-pic-show img').clone();
   var voice = user.find('.a-u-name .a-u-data-voice').val();
   var type = user.find('.a-u-dialog-master a').hasClass('btn-success');
 
-  if(name == ''){
+  if (name == '') {
     alert('请输入用户名！');
     return false;
   }
 
-  if(voice == ''){
+  if (voice == '') {
     alert('请输入语音时间！');
     return false;
   }
 
-  if(isNaN(voice)){
+  if (isNaN(voice)) {
     alert('您输入的语音时间有误！');
     return false;
   }
 
-  if(!img.length){
+  if (!img.length) {
     img = '<img src="images/default-head.png" />';
   }
 
@@ -364,7 +370,7 @@ $('body').on('click','.a-u-dialog-voice a',function(){
   var v_len = 0;
   var len = 0;
   v_len = voice > 60 ? 60 : voice;
-  len = (360 - 96)/60 * v_len + 96;
+  len = (360 - 96) / 60 * v_len + 96;
 
   var unread = '';//type ? '' : '<strong></strong>';
 
@@ -378,29 +384,27 @@ $('body').on('click','.a-u-dialog-voice a',function(){
 });
 
 //主人切换
-$('body').on('click','.a-u-dialog-master a',function(){
+$('body').on('click', '.a-u-dialog-master a', function () {
   var parent = $(this).parents('.users');
   parent.find('.a-u-dialog-master a').removeClass('btn-success');
   $(this).addClass('btn-success');
   return false;
 });
 
-$('.body_bg_del').click(function(){
-  $('.i-body').css('background-image','none');
+$('.body_bg_del').click(function () {
+  $('.i-body').css('background-image', 'none');
   $('.a-u-pic-bodybg img').remove();
   return false;
 });
 
-
-setTimeout(function(){
+/*
+setTimeout(function () {
   $('.btn-rand-face').click();
   $('.btn-rand-username').click();
 
   var _title = '';
-  $(".a-u-data-name").each(function(){
+  $(".a-u-data-name").each(function () {
     _title = $(this).val();
   });
-
-  /*$('.input-common').val(_title);
-  $('.i-n-name span').text(_title);*/
-},500);
+}, 500);
+*/
