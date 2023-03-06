@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -6,14 +8,14 @@
 	<meta name="renderer" content="webkit">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	
+
 	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-	name="viewport">
+		name="viewport">
 	<meta content="telephone=no, address=no" name="format-detection">
-	
+
 	<meta http-equiv="Cache-Control" content="no-transform">
 	<meta http-equiv="Cache-Control" content="no-siteapp">
-	
+
 	<link rel="icon" href="data:,">
 	<link rel="stylesheet" type="text/css" href="index_files/style_pc.css" id="home_css">
 	<link rel="stylesheet" type="text/css" href="index_files/common.css">
@@ -101,7 +103,7 @@
 								</p>
 								<div style="margin: 0 0 10px; margin-top: 20px;">
 									<span> 电量： </span>
-									
+
 									<div class="slider_bar" id="sglide-0"
 										style="border-radius: 10px; overflow: hidden; width: 300px; height: 20px; text-align: left; margin: auto; cursor: pointer; z-index: 997; position: relative; box-sizing: content-box; user-select: none; display: inline-block; vertical-align: middle;">
 										<div class="follow_bar"
@@ -112,7 +114,7 @@
 											style="width: 2%; background: rgb(51, 51, 51); height: inherit; display: inline-block; font-size: 0px; position: relative; z-index: 1; box-sizing: content-box; left: 147px;">
 										</div>
 									</div>
-									
+
 								</div>
 								<p>
 									<span> 电池状态： </span>
@@ -175,10 +177,11 @@
 
 									<div class="a-u-pic a-u-pic-bodybg">
 										<div class="a-u-pic-show">
-											<input type="file" data-callback="set_body_bg" accept="image/jpeg,image/x-png">
+											<input type="file" data-callback="set_body_bg"
+												accept="image/jpeg,image/x-png">
 										</div>
 									</div>
-						
+
 									<div>
 										背景图片<span style="color:#f00">(图片大小:宽640 x 高1136)</span>
 										<br>
@@ -186,13 +189,14 @@
 										<br/>-->
 										<a class="body_bg_del btn btn-danger btn_no_water" href="#">删除背景</a>
 									</div>
-						
+
 									<!-- #bgModal -->
 									<div class="modal fade" id="bgModal" role="dialog" aria-labelledby="myModalLabel">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close"><span aria-hidden="true">×</span></button>
 													<h4 class="modal-title" id="myModalLabel">选择背景</h4>
 												</div>
 												<div class="modal-body">
@@ -202,7 +206,8 @@
 													<div style="clear:both"></div>
 												</div>
 												<div class="modal-footer">
-													<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">确定</button>
 												</div>
 											</div>
 										</div>
@@ -330,52 +335,6 @@
 										<div class="a-u-dialog-master">
 											<a class="btn btn-primary btn-success" href="#"> 设为主人 </a>
 										</div>
-									</div>
-									<div class="add-user">
-										<div class="a-u-pic">
-											<div class="a-u-pic-show"><input type="file"
-													accept="image/jpeg,image/x-png"><img src="./index_files/add-pic.png"></div>
-										</div><select id="select" class="slt-common" onchange="setUserInfo(this)">
-											<option>-----请选择-----</option>
-											<script>
-												user_name_array.forEach(e=>{
-													document.write(`<option>${e}</option>`)
-												})
-											</script>
-										</select>
-										<div class="a-u-name">
-											<p><span>用户名：</span><input class="a-u-data-name" type="text" value=""></p>
-											<p><span>聊天内容：</span><textarea
-													class="a-u-content1677640746078">收到</textarea><a
-													class="a-u-face btn-add-face" data-input="a-u-content1677640746078"
-													href="#">表情</a></p>
-											<p><span>红包祝福语：</span><input class="a-u-data-redpacket" type="text"
-													value="恭喜发财，大吉大利！"></p>
-											<p><span>转账/收钱金额：</span><input class="a-u-data-pay" type="text" value="">
-											</p>
-											<p><span>语音时间：</span><input class="a-u-data-voice" type="text" value=""></p>
-											<p><input style="margin-right:5px;" class="btn-rand-username" type="button"
-													value="随机用户名"></p>
-											<div class="a-u-pic-pic">
-												<div class="a-u-pic-show-pic"><input type="file" class="a-u-data-pic"
-														accept="image/jpeg,image/x-png"></div>
-											</div>
-										</div>
-										<div class="a-u-dialog" style="clear:both;"><a class="btn btn-primary"
-												data-type="left" href="#">添加文字对话</a></div>
-										<div class="a-u-dialog-pic"><a class="btn btn-warning" data-type="left"
-												href="#">添加图片对话</a></div>
-										<div class="a-u-dialog-voice"><a class="btn btn-primary" data-type="left"
-												href="#">添加语音对话</a></div>
-										<div class="a-u-dialog-sedpacket"><a class="btn btn-danger" data-type="left"
-												href="#">添加发红包对话</a></div>
-										<div class="a-u-dialog-redpacket"><a class="btn btn-danger" data-type="left"
-												href="#">添加收红包对话</a></div>
-										<div class="a-u-dialog-pay"><a class="btn btn-primary" data-dir="send"
-												data-type="left" href="#">添加转账对话</a></div>
-										<div class="a-u-dialog-pay"><a class="btn btn-primary" data-dir="rec"
-												data-type="left" href="#">添加收钱对话</a></div>
-										<div class="a-u-dialog-del"><a class="btn btn-danger" href="#">删除用户</a></div>
 									</div>
 								</div>
 								<div class="btns">
